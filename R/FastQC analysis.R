@@ -78,6 +78,22 @@ adapter <- function(id){
    dev.off() # close the pdf
 }
 
+# To catch all the per base quality graph of all FastQC create by Galaxy
+bquality <- function(id){
+  #### By Pierre-Louis Stenger (Pierrelouis.stenger@gmail.com) ####
+  require(grDevices) # require packages
+  require(imager) # require packages
+  pdf("Per base quality.pdf", height=10,width=10) # create the PDF
+  id <- list.files(pattern = "per_base_quality.png", recursive = TRUE) # catch all the images call "adapter_content.png" in all folders
+  nb <- length(list.files(pattern = "per_base_quality.png", recursive = TRUE)) # find the number of all the images call "adapter_content.png" in all folders
+
+  for(i in id){ # create the loop --> for one image (i) in all images (id)...
+    a <- load.image(i) # ... find this image and load it...
+    print(plot(a, main = i)) # ... print it in the pdf
+  }
+   dev.off() # close the pdf
+}
+
 
 
 ##################################################################################################################################################################
@@ -91,6 +107,9 @@ adapter <- function(id){
 
 # To obtain all adapters content of all FastQC create by Galaxy in one pdf file ("Adapters content.pdf")
 # adapter()
+
+# To obtain all the per base quality of all FastQC create by Galaxy in one pdf file ("Per base quality.pdf")
+# bquality()
 
 ##################################################################################################################################################################
 ##################################################################################################################################################################
