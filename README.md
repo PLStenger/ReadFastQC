@@ -35,4 +35,10 @@ Run this to obtain all adapters content of all FastQC create by Galaxy in one pd
 adapter()
 ```
 
+Run this to obtain all the per base quality of all FastQC create by Galaxy in one pdf file ("**Per base quality.pdf**")
+
+``` r
+bquality()
+```
+
 And that's it ! ;)
