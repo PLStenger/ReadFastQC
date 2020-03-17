@@ -42,3 +42,12 @@ bquality()
 ```
 
 And that's it ! ;)
+
+# Update 2020/03/17
+
+For new version of FastQC, lunch:
+
+``` r
+New_FastQCresults("HI.4112.002.D710---D501.X18_R2_fastqc.html")
+New_FastQCresultsForAll()
+```
