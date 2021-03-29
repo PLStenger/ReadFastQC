@@ -34,12 +34,20 @@ New_FastQCresultsForAll() # for new FastQC version > 2019
 Run this to obtain all adapters content of all FastQC in one pdf file ("**Adapters content.pdf**"), but before you will need to unzip all files :
 
 ``` r
+id <- list.files(pattern = ".zip") # Find all the names of files with html extension
+for(i in id){
+  unzip(i, exdir="~/PATH_OF_FOUR_FILES")
+}
 adapter()
 ```
 
 Run this to obtain all the per base quality of all FastQC in one pdf file ("**Per base quality.pdf**"), but before you will need to unzip all files  :
 
 ``` r
+id <- list.files(pattern = ".zip") # Find all the names of files with html extension
+for(i in id){
+  unzip(i, exdir="~/PATH_OF_FOUR_FILES")
+}
 bquality()
 ```
 
