@@ -84,7 +84,7 @@ return(results)
 New_FastQCresultsForAll <- function(id){
   #### By Pierre-Louis Stenger (Pierrelouis.stenger@gmail.com) ####
   id <- list.files(pattern = ".html") # Find all the names of files with html extension
-  sink("FastQCanalysis.csv", append=TRUE) # Create csv file to put the informations
+  sink("FastQCanalysis.txt", append=TRUE) # Create csv file to put the informations
   cat("Name",";", "Date", ";","Total Sequences", ";","Sequences flagged as poor quality", ";","Sequence length", ";","%GC", ";","\n") # Give a header of this file
   for(i in id){
     a <- New_FastQCresults(i)
